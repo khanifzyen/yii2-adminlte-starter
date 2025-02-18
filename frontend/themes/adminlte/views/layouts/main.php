@@ -2,7 +2,7 @@
 
 use yii\helpers\Html;
 use yii\web\View;
-use frontend\assets\AdminLteAsset; // Ganti dengan namespace asset bundle Anda
+use frontend\themes\adminlte\AdminLteAsset; // Ganti dengan namespace asset bundle Anda
 
 // Registrasi asset bundle AdminLTE
 AdminLteAsset::register($this);
@@ -49,11 +49,21 @@ if (empty($this->title)) {
                 <!--begin::Right Navbar Links-->
                 <?= $this->render('_toprightnavbar'); ?>
                 <!--end::Right Navbar Links-->
+                <!--end::Container-->
             </div>
-            <!--end::Container-->
         </nav>
         <!--end::Header-->
+        <!--begin::Sidebar-->
+        <?= $this->render('_sidebar'); ?>
+        <!--end::Sidebar-->
+        <!--begin::App Main-->
+        <?= $this->render('_app_main') ?>
+        <!--end::App Main-->
+        <!--begin::Footer-->
+        <?= $this->render('_footer'); ?>
+        <!--end::Footer-->
     </div>
+
     <!--end::App Wrapper-->
     <?php $this->endBody() ?>
 </body>
